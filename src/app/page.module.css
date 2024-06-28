@@ -74,13 +74,6 @@
   text-wrap: balance;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
 .logo {
   position: relative;
 }

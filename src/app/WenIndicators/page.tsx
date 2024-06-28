@@ -36,7 +36,7 @@ const getCountryImage = (country: string) => {
         case 'Global':
             return '/flags/global.png';
         default:
-            return '/images/default.png'; // Imagem padrão caso o país não seja encontrado
+            return '/flags/global.png';
     }
 };
 
@@ -88,7 +88,6 @@ export default function WenIndicators() {
     return (
         <div className={styles.container}>
             <h2>WEN INDICATORS</h2>
-            <Divider />
             <div className={styles.table}>
                 <Table style={{ width: '80%' }} columns={columns} dataSource={data} size="middle" />
             </div>
