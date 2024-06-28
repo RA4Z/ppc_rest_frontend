@@ -44,4 +44,3 @@ This repository houses the frontend application for the WEG Energy PPC (Producti
 ### Contact:
 
 For any questions or assistance, please contact Robert Aron Zimmermann at robertn@weg.net.
-# ppc_rest_frontend
