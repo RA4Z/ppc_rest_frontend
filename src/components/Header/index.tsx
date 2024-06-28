@@ -2,7 +2,6 @@ import { Divider } from 'antd';
 import styles from './Header.module.scss'
 import Image from "next/image";
 import Link from 'next/link';
-import SideBar from 'components/SideBar';
 
 export default function Header() {
     return (
