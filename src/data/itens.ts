@@ -1,4 +1,4 @@
-import api from 'services/api'
+import { update_database } from "services/functions"
 
 export const itens = [
     {
@@ -9,6 +9,6 @@ export const itens = [
     {
         title: 'Update WEN Indicadors',
         description: 'Atualizar dados de WEN Indicators',
-        onclick: () => api.GET.update_database('/update')
+        onclick: () => update_database('/update')
     },
 ]
