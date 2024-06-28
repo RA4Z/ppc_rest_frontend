@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import styles from './WenIndicators.module.scss'
 import { get_data } from 'services/functions'
-import { Divider, Table } from 'antd';
+import { Avatar, Divider, Table } from 'antd';
 import type { TableColumnsType } from 'antd';
 
 interface ListIndicatorsType {
@@ -17,10 +17,39 @@ interface IndicadorProps {
     valor: string | number | undefined;
 }
 
+const getCountryImage = (country: string) => {
+    switch (country) {
+        case 'Brasil':
+            return '/flags/bandeira brasil.png';
+        case 'Estados Unidos':
+            return '/flags/bandeira usa.png';
+        case 'Portugal':
+            return '/flags/bandeira portugal.png';
+        case 'Índia':
+            return '/flags/bandeira india.png';
+        case 'África do Sul':
+            return '/flags/bandeira africa.png';
+        case 'China':
+            return '/flags/bandeira china.png';
+        case 'Alemanha':
+            return '/flags/bandeira alemanha.png';
+        case 'Global':
+            return '/flags/global.png';
+        default:
+            return '/images/default.png'; // Imagem padrão caso o país não seja encontrado
+    }
+};
+
 const columns: TableColumnsType<ListIndicatorsType> = [
     {
         title: 'País',
         dataIndex: 'country',
+        render: (country: string) => (
+            <span>
+                <Avatar src={getCountryImage(country)} style={{ marginRight: '8px' }} />
+                {country}
+            </span>
+        ),
     },
     {
         title: 'Empresa',
