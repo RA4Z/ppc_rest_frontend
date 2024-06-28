@@ -1,9 +1,8 @@
 import axios from "axios";
 import { notification } from "antd";
-import { configs } from "constants";
 import { get_data, update_database } from "./functions";
 
-const endpoint = configs.proxyUrl;
+const endpoint = '';
 
 const client = axios.create({
     baseURL: endpoint
