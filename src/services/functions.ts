@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 export async function get_data(path: string) {
     try {

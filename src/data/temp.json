@@ -1,0 +1,128 @@
+[
+    {
+        "id": "Global",
+        "country": "Global",
+        "empresa": "GLOBAL",
+        "indicadores": [
+            "Global Total Inventory*",
+            "Global Total Inventory Turns",
+            "Global Raw Material Inventory*",
+            "Global Raw Material Inventory Turns",
+            "Global Work in Process Inventory*",
+            "Global Work in Process Inventory Turns",
+            "Global Finished Good Inventory*",
+            "Global Finished Good Inventory Turns",
+            "Global sem KANNIS Total Inventory*",
+            "Global sem KANNIS Total Inventory Turns",
+            "Global sem KANNIS Raw Material Inventory*",
+            "Global sem KANNIS Raw Material Inventory Turns",
+            "Global sem KANNIS Work in Process Inventory*",
+            "Global sem KANNIS Work in Process Inventory Turns",
+            "Global sem KANNIS Finished Good Inventory*",
+            "Global sem KANNIS Finished Good Inventory Turns"
+        ]
+    },
+    {
+        "id": "Brazil",
+        "country": "Brasil",
+        "empresa": "JGS",
+        "indicadores": [
+            "JGS Total Inventory*",
+            "JGS Total Inventory Turns",
+            "Atendimento das OVs JGS"
+        ]
+    },
+    {
+        "id": "Brazil",
+        "country": "Brasil",
+        "empresa": "WSB",
+        "indicadores": [
+            "WSB Total Inventory*",
+            "WSB Total Inventory Turns",
+            "Atendimento das OVs WSB Serviços e Máquinas Novas",
+            "Atendimento das OVs WSB Partes e Peças"
+        ]
+    },
+    {
+        "id": "Brazil",
+        "country": "Brasil",
+        "empresa": "TGM",
+        "indicadores": [
+            "Atendimento das OVs TGM"
+        ]
+    },
+    {
+        "id": "Brazil",
+        "country": "Brasil",
+        "empresa": "WTB",
+        "indicadores": [
+            "WTB Total Inventory*",
+            "WTB Total Inventory Turns",
+            "Atendimento das OVs WTB",
+            "Atendimento das OVs Serviços WTB"
+        ]
+    },
+    {
+        "id": "Brazil",
+        "country": "Brasil",
+        "empresa": "EOL",
+        "indicadores": [
+            "EOL Total Inventory*",
+            "EOL Total Inventory Turns"
+        ]
+    },
+    {
+        "id": "United States",
+        "country": "Estados Unidos",
+        "empresa": "WEM",
+        "indicadores": [
+            "WEM Total Inventory*",
+            "WEM Total Inventory Turns",
+            "Atendimento das OVs WEM",
+            "Atendimento das OVs WEM Partes e Peças",
+            "Atendimento das OVs WEM Máquinas e Serviços"
+        ]
+    },
+    {
+        "id": "India",
+        "country": "Índia",
+        "empresa": "WII",
+        "indicadores": [
+            "WII Total Inventory*",
+            "WII Total Inventory Turns",
+            "Atendimento das OVs WII"
+        ]
+    },
+    {
+        "id": "South Africa",
+        "country": "África do Sul",
+        "indicadores": []
+    },
+    {
+        "id": "Portugal",
+        "country": "Portugal",
+        "empresa": "WPT",
+        "indicadores": [
+            "WPT Total Inventory*",
+            "WPT Total Inventory Turns"
+        ]
+    },
+    {
+        "id": "China",
+        "country": "China",
+        "empresa": "WNT",
+        "indicadores": [
+            "WNT Total Inventory*",
+            "WNT Total Inventory Turns"
+        ]
+    },
+    {
+        "id": "Germany",
+        "country": "Alemanha",
+        "empresa": "KANNIS",
+        "indicadores": [
+            "KANNIS Total Inventory*",
+            "KANNIS Total Inventory Turns"
+        ]
+    }
+]
