@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import styles from './WenIndicators.module.scss'
+import styles from 'app/WenIndicators/WenIndicators.module.scss'
 import { get_data } from 'services/functions'
 import { Avatar, Table } from 'antd';
 import type { TableColumnsType } from 'antd';
@@ -78,9 +78,10 @@ const columns: TableColumnsType<ListIndicatorsType> = [
 
 export default function WenIndicators() {
     const [data, setData] = useState([])
+
     useEffect(() => {
         async function coletarInfo() {
-            if (data.length === 0) setData(await get_data('/wen_indicators'))
+            if (data.length === 0) setData(await get_data(window.location.pathname))
         }
         coletarInfo()
     }, [])
