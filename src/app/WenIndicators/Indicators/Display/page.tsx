@@ -65,10 +65,8 @@ export default function WenIndicators() {
     }, [])
 
     return (
-        <div className={styles.container}>
-            <div className={styles.table}>
-                <Table style={{ width: '95%' }} columns={columns} dataSource={data} size="middle" />
-            </div>
+        <div className={styles.table}>
+            <Table style={{ width: '95%' }} columns={columns} dataSource={data} size="middle" />
         </div>
     )
 }
