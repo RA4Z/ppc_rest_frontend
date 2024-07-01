@@ -58,6 +58,7 @@ export default function Display() {
         ? Object.keys(data[0]).map((key) => ({
             title: key,
             dataIndex: key,
+            width: 100,
             key: key,
             render: (text: any) => (
                 Array.isArray(text) ? (
@@ -77,12 +78,12 @@ export default function Display() {
         <>
             <h2>Comissão de Estoques</h2>
             <div className={styles.table}>
-                <Table style={{ width: '95%' }} dataSource={tableData1} columns={generateColumns(tableData1)} />
+                <Table style={{ width: '95%' }} dataSource={tableData1} columns={generateColumns(tableData1)} bordered />
             </div>
 
             <h2>Atendimento das OVs</h2>
             <div className={styles.table}>
-                <Table style={{ width: '95%' }} dataSource={tableData2} columns={generateColumns(tableData2)} />
+                <Table style={{ width: '95%' }} dataSource={tableData2} columns={generateColumns(tableData2)} bordered />
             </div>
         </>
     );
