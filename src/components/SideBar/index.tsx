@@ -10,13 +10,12 @@ type NotificationPlacement = NotificationArgsProps['placement'];
 
 export default function SideBar() {
     const router = useRouter()
-    const [api, contextHolder] = notification.useNotification();
 
-    const openNotification = (title: string, content: string) => {
-        api.info({
+    const openNotification = (placement: NotificationPlacement, title: string, content: string) => {
+        notification.open({
             message: title,
             description: content,
-            placement: 'bottom',
+            placement,
         });
     };
 
@@ -25,19 +24,20 @@ export default function SideBar() {
             case 'WenIndicators_All_Update':
                 const result = await update_database('/update')
                 if (result) {
-                    return () => openNotification('Dados Atualizados', 'Os dados foram atualizados com sucesso no servidor PCP!')
+                    openNotification('bottom', 'Dados Atualizados', 'Os dados foram atualizados com sucesso no servidor PCP!')
                 } else {
-                    return () => openNotification('Erro Inesperado', 'Ocorreu algum erro ao tentar atualizar os dados! Tente novamente mais tarde!')
+                    openNotification('bottom', 'Erro Inesperado', 'Ocorreu algum erro ao tentar atualizar os dados! Tente novamente mais tarde!')
                 }
+
             case 'WenIndicators_List_Display':
                 return router.push('/WenIndicators', { scroll: false })
+
             default:
                 return
         }
     }
     return (
         <>
-            {contextHolder}
             <Menu
                 className={styles.side}
                 onClick={clicou}
