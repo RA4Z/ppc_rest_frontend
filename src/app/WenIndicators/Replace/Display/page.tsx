@@ -8,10 +8,12 @@ const columns: TableColumnsType<any> = [
     {
         title: 'Texto Original',
         dataIndex: 'actual',
+        width:'50%'
     },
     {
         title: 'Texto Novo',
         dataIndex: 'new',
+        width:'50%'
     },
 ];
 
@@ -26,7 +28,7 @@ export default function Display() {
     }, [])
     return (
         <div className={styles.table}>
-            <Table style={{ width: '95%' }} columns={columns} dataSource={data} size="middle" />
+            <Table style={{ width: '95%' }} scroll={{ x: 800 }} columns={columns} dataSource={data} size="middle" bordered />
         </div>
     )
 }

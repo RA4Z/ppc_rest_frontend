@@ -21,6 +21,7 @@ interface IndicadorProps {
 const columns: TableColumnsType<ListIndicatorsType> = [
     {
         title: 'País',
+        width: '25%',
         dataIndex: 'country',
         render: (country: string) => (
             <span>
@@ -31,6 +32,7 @@ const columns: TableColumnsType<ListIndicatorsType> = [
     },
     {
         title: 'Empresa',
+        width: '25%',
         dataIndex: 'empresa',
     },
     {
@@ -66,7 +68,7 @@ export default function WenIndicators() {
 
     return (
         <div className={styles.table}>
-            <Table style={{ width: '95%' }} columns={columns} dataSource={data} size="middle" />
+            <Table style={{ width: '95%' }} scroll={{ x: 800 }} columns={columns} dataSource={data} size="middle" bordered />
         </div>
     )
 }
