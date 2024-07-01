@@ -17,8 +17,8 @@ export const items: MenuItem[] = [
                 label: 'Indicators List',
                 type: 'group',
                 children: [
-                    { key: 'WenIndicators_List_Display', label: 'Display Indicators List' },
-                    { key: 'WenIndicators_List_Update', label: 'Update Indicators List' },
+                    { key: 'WenIndicators_Indicators_Display', label: 'Display Indicators List' },
+                    { key: 'WenIndicators_Indicators_Update', label: 'Update Indicators List' },
                 ],
             },
             {

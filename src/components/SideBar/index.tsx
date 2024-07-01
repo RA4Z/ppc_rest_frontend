@@ -24,16 +24,13 @@ export default function SideBar() {
             case 'WenIndicators_All_Update':
                 const result = await update_database('/update')
                 if (result) {
-                    openNotification('bottom', 'Dados Atualizados', 'Os dados foram atualizados com sucesso no servidor PCP!')
+                    return openNotification('bottom', 'Dados Atualizados', 'Os dados foram atualizados com sucesso no servidor PCP!')
                 } else {
-                    openNotification('bottom', 'Erro Inesperado', 'Ocorreu algum erro ao tentar atualizar os dados! Tente novamente mais tarde!')
+                    return openNotification('bottom', 'Erro Inesperado', 'Ocorreu algum erro ao tentar atualizar os dados! Tente novamente mais tarde!')
                 }
-
-            case 'WenIndicators_List_Display':
-                return router.push('/WenIndicators', { scroll: false })
-
+                
             default:
-                return
+                return router.push('/' + e.key.replaceAll('_', '/'), { scroll: false })
         }
     }
     return (

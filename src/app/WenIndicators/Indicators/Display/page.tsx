@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import styles from './WenIndicators.module.scss'
 import { get_data } from 'services/functions'
-import { Avatar, Divider, Table } from 'antd';
+import { Avatar, Table } from 'antd';
 import type { TableColumnsType } from 'antd';
 
 interface ListIndicatorsType {
