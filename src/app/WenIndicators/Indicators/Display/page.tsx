@@ -56,7 +56,7 @@ const columns: TableColumnsType<ListIndicatorsType> = [
     },
 ];
 
-export default function WenIndicators() {
+export default function Display() {
     const [data, setData] = useState([])
 
     useEffect(() => {

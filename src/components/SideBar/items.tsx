@@ -36,7 +36,6 @@ export const items: MenuItem[] = [
                 type: 'group',
                 children: [
                     { key: 'WenIndicators_Database_Display', label: 'Display Database List' },
-                    { key: 'WenIndicators_Database_Update', label: 'Update Database List' },
                 ],
             },
         ],
