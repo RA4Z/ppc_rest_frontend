@@ -21,7 +21,6 @@ export default function Display() {
     useEffect(() => {
         async function coletarInfo() {
             if (data.length === 0) setData(await get_data(window.location.pathname))
-            console.log(data)
         }
         coletarInfo()
     }, [])
