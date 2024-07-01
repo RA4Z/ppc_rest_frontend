@@ -4,6 +4,7 @@ import styles from 'app/WenIndicators/WenIndicators.module.scss'
 import { get_data } from 'services/functions'
 import { Avatar, Table } from 'antd';
 import type { TableColumnsType } from 'antd';
+import { getCountryImage } from 'utils';
 
 interface ListIndicatorsType {
     id: string,
@@ -16,29 +17,6 @@ interface IndicadorProps {
     nome: string;
     valor: string | number | undefined;
 }
-
-const getCountryImage = (country: string) => {
-    switch (country) {
-        case 'Brasil':
-            return '/flags/bandeira brasil.png';
-        case 'Estados Unidos':
-            return '/flags/bandeira usa.png';
-        case 'Portugal':
-            return '/flags/bandeira portugal.png';
-        case 'Índia':
-            return '/flags/bandeira india.png';
-        case 'África do Sul':
-            return '/flags/bandeira africa.png';
-        case 'China':
-            return '/flags/bandeira china.png';
-        case 'Alemanha':
-            return '/flags/bandeira alemanha.png';
-        case 'Global':
-            return '/flags/global.png';
-        default:
-            return '/flags/global.png';
-    }
-};
 
 const columns: TableColumnsType<ListIndicatorsType> = [
     {
@@ -89,7 +67,7 @@ export default function WenIndicators() {
     return (
         <div className={styles.container}>
             <div className={styles.table}>
-                <Table style={{ width: '80%' }} columns={columns} dataSource={data} size="middle" />
+                <Table style={{ width: '95%' }} columns={columns} dataSource={data} size="middle" />
             </div>
         </div>
     )
