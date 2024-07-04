@@ -8,7 +8,7 @@ import { formatoMoneyBR } from 'utils';
 export default function Display() {
     const [data, setData] = useState([]);
     const [tableData, setTableData] = useState<any[]>([]);
-    const [selectedTable, setSelectedTable] = useState('Comissão de Estoques'); // Estado para controlar a tabela selecionada
+    const [selectedTable, setSelectedTable] = useState('Comissão de Estoques');
 
     useEffect(() => {
         async function coletarInfo() {
@@ -21,10 +21,11 @@ export default function Display() {
     }, []);
 
     useEffect(() => {
-        // Atualiza a tabela exibida quando o usuário seleciona uma opção
         const filteredData = data.filter((item: any) => {
             if (selectedTable === 'Comissão de Estoques') {
                 return item.hasOwnProperty('Concatenar');
+            } else if (selectedTable === 'Global Efficiency') {
+                return item.hasOwnProperty('Total_Efficiency_Registered');
             } else {
                 return item.hasOwnProperty('Indicador');
             }
@@ -58,34 +59,46 @@ export default function Display() {
             }
         });
         setTableData(filteredData);
-    }, [data, selectedTable]); // Executa quando 'data' ou 'selectedTable' mudam
+    }, [data, selectedTable]);
 
-    // Função para gerar colunas dinamicamente (reutilizável)
-    const generateColumns = (data: any) => data.length > 0
-        ? Object.keys(data[0]).map((key) => ({
-            title: key,
-            dataIndex: key,
-            width: 100,
-            key: key,
-            render: (text: any) => (
-                Array.isArray(text) ? (
-                    <ul>
-                        {text.map((item: any, index: any) => (
-                            <li style={{ listStyle: 'none' }} key={item + index}>{item}</li>
-                        ))}
-                    </ul>
-                ) : (
-                    text
-                )
-            ),
-        }))
-        : [];
+    // Função para gerar colunas dinamicamente, com filtro para 'Global Efficiency'
+    const generateColumns = (data: any) => {
+        if (data.length > 0) {
+            const commonColumns = ['Empresa', 'Indicador', 'averages', 'data'];
+            const allColumns = Object.keys(data[0]);
+
+            const filteredColumns = selectedTable === 'Global Efficiency'
+                ? commonColumns
+                : allColumns;
+
+            return data.length > 0
+                ? filteredColumns.map((key) => ({
+                    title: key,
+                    dataIndex: key,
+                    width: 100,
+                    key: key,
+                    render: (text: any) => (
+                        Array.isArray(text) ? (
+                            <ul>
+                                {text.map((item: any, index: any) => (
+                                    <li style={{ listStyle: 'none' }} key={item + index}>{item}</li>
+                                ))}
+                            </ul>
+                        ) : (
+                            text
+                        )
+                    ),
+                }))
+                : [];
+        }
+    }
 
     return (
         <>
             <Radio.Group style={{ margin: 15 }} value={selectedTable} onChange={(e) => setSelectedTable(e.target.value)}>
-                <Radio.Button value="Comissão de Estoques">Comissão de Estoques</Radio.Button>
-                <Radio.Button value="Atendimento das OVs">Atendimento das OVs</Radio.Button>
+                <Radio.Button value="Comissão de Estoques">Inventory</Radio.Button>
+                <Radio.Button value="Atendimento das OVs">On time Delivery</Radio.Button>
+                <Radio.Button value="Global Efficiency">Global Efficiency</Radio.Button>
             </Radio.Group>
 
             <div className={styles.table}>
